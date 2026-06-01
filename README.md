@@ -6,11 +6,11 @@ An end-to-end data analytics workflow focused on transforming raw sales data int
 
 ## 📊 Project Visuals
 
-### Power BI Dashboard
-![Sales Dashboard Dashboard View](sales.png)
+### Home View
+![Home](home.png)
 
-### Python Data Processing (Pandas)
-![Data Cleaning Process](cleaned_data_SS.png)
+### Performance Overview
+![Overview](overview.png)
 
 ---
 
@@ -47,8 +47,8 @@ Based on the 482 verified transaction records, the final dashboard highlights th
 * `Sales Analysis.ipynb` - Python notebook containing the Pandas cleaning scripts.
 * `sales_cleaned.csv` - The cleaned, deduplicated output file.
 * `sales.pbix` - Power BI workbook with the active data model and DAX measures.
-* `sales.png` - Image file displaying the Power BI report canvas.
-* `cleaned_data_SS.png` - Screenshot proof of the data engineering steps.
+* `home.png` - Image file displaying the primary dashboard home interface.
+* `overview.png` - Image file showing the detailed analytical performance overview.
 
 ---
 
