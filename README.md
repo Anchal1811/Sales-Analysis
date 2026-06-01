@@ -1,53 +1,59 @@
-# Sales Analysis: End-to-End BI Pipeline
+# Sales Analysis: End-to-End Data Pipeline
 
-An end-to-end data analytics project focused on transforming raw, unformatted corporate sales data into a structured relational schema to extract actionable business insights. The pipeline utilizes **Excel** for initial data inspection, **Python (Pandas)** for automated data cleaning, **SQL (MySQL)** for data storage and structural validation, and **Power BI** for interactive business intelligence reporting.
-
-## 📊 Project Visual
-Below is a preview of the interactive dashboard developed in Power BI, connected to the cleaned dataset:
-
-![Sales Dashboard](sales.png)
+An end-to-end data analytics workflow focused on transforming raw sales data into a validated database structure and interactive business intelligence reports. The pipeline utilizes **Excel** for data exploration, **Python (Pandas)** for data cleaning, **SQL** for staging, and **Power BI** for final reporting.
 
 ---
 
-## 🛠️ Tech Stack & Workflow
+## 📊 Project Visuals
 
-1. **Data Ingestion & Inspection (Excel):** Evaluated the raw dataset (`sales_raw_500.xlsx`) containing 520 records to map out missing entries, syntax inconsistencies, and duplicate transactional records.
-2. **Data Cleaning & Transformation (Python/Pandas):** Implemented automated cleaning rules via a Jupyter Notebook (`Sales Analysis.ipynb`). This stage filtered out incomplete fields, cast appropriate data types, and exported a clean baseline (`sales_cleaned.csv`), trimming down the final dataset to **482 validated records**.
-3. **Database Relational Setup (SQL):** Imported the structured dataset into a MySQL database to ensure data integrity and query-readiness for business reporting.
-4. **Data Modeling & Visualization (Power BI):** Developed an interactive dashboard (`sales.pbix`) utilizing specialized DAX metrics to track profitability, revenue streams, and regional distribution.
+### Power BI Dashboard
+![Sales Dashboard Dashboard View](sales.png)
 
----
-
-## 📉 Data Quality & Pipeline Summary
-
-* **Raw Data Input:** 520 rows of untrusted entries.
-* **Processed Dataset:** 482 entries successfully validated after removing anomalies, null fields, and redundant rows.
-* **Pipeline Goal:** Establishing a repeatable data flow that standardizes raw tabular inputs into reliable reporting metrics.
+### Python Data Processing (Pandas)
+![Data Cleaning Process](cleaned_data_SS.png)
 
 ---
 
-## 🚀 Quick Business Insights
+## 🛠️ Project Workflow
 
-Based on the validated 482 records and the calculated dashboard measures, the analysis reveals the following insights:
-
-* **Regional Revenue Breakdown:** Sales distribution is segmented across four key regions—**East, West, North, and South**. The visuals allow stakeholders to trace exactly which geographical territory handles the highest concentration of transaction volumes.
-* **Profitability Margin Analysis:** Utilizing custom DAX calculations, specifically the **`% of Profit on Sales`** metric, the reporting engine explicitly separates total revenue from actual net profitability. This identifies high-margin vs. high-volume product categories, pinpointing where operational costs may be eroding profit lines.
-* **Product Concentration:** Distinct visual trends highlight which product subsets act as the primary cash drivers versus those suffering from sluggish turnover rates, enabling tighter inventory control and targeted regional marketing.
-
----
-
-## 📂 File Architecture
-
-* `sales_raw_500.xlsx`: The source unstructured spreadsheet data.
-* `Sales Analysis.ipynb`: The Pandas-driven cleaning scripts handling data prep and normalization.
-* `sales_cleaned.csv`: Output baseline utilized for relational database mapping.
-* `sales.pbix`: Power BI workbook containing data models, DAX measures, and visual canvases.
-* `sales.png`: Static snapshot of the final reporting dashboard.
+1. **Data Discovery (Excel):** Evaluated the initial uncleaned dataset (`sales_raw_500.xlsx`) containing 520 rows to analyze data types, locate null values, and find formatting errors.
+2. **Data Cleaning & Engineering (Python):** Developed automated data cleaning steps using a Jupyter Notebook (`Sales Analysis.ipynb`). This stage filtered out invalid rows, handled missing values, and exported a reliable baseline dataset (`sales_cleaned.csv`), bringing the final count to **482 clean records**.
+3. **Database Integration (SQL):** Structured and loaded the processed CSV into a SQL environment to simulate enterprise relational storage.
+4. **Data Modeling & Visualization (Power BI):** Maintained data models and wrote custom DAX formulas within Power BI (`sales.pbix`) to create interactive matrix charts, cards, and bar charts.
 
 ---
 
-## 🔧 Setup & Installation
+## 📉 Data Quality & Transformation Metrics
 
-1. **Data Processing:** Open and run `Sales Analysis.ipynb` in a Jupyter environment to verify data processing steps.
-2. **Database Schema:** Import `sales_cleaned.csv` into your preferred SQL environment (e.g., MySQL workbench).
-3. **Dashboard Reporting:** Open `sales.pbix` in Power BI Desktop to inspect the calculations, underlying data schema, and interactive charts.
+* **Raw Rows Ingested:** 520 rows
+* **Cleaned Rows Retained:** 482 rows
+* **Data Fields Standardized:** Product Segment, Regions, Order Dates, Total Sales, and Total Profit.
+
+---
+
+## 🚀 Real Business Insights
+
+Based on the 482 verified transaction records, the final dashboard highlights the following specific findings:
+
+* **Regional Allocation:** Sales distributions are clearly segmented across four key regions—**East, West, North, and South**. The data enables immediate mapping of exactly which regional hubs drive volume versus those underperforming.
+* **Profitability Realities:** Using the custom **`% of Profit on Sales`** DAX calculation, the metrics split pure revenue away from net profit. This isolates product lines that generate high top-line sales but yield weak profit margins due to operational or delivery costs.
+* **Product Performance Tracker:** Segmented visualizations isolate high-velocity products from stagnant stock, offering a concrete data foundation to adjust inventory and marketing focus.
+
+---
+
+## 📂 File Structure
+
+* `sales_raw_500.xlsx` - Source dataset with original unformatted entries.
+* `Sales Analysis.ipynb` - Python notebook containing the Pandas cleaning scripts.
+* `sales_cleaned.csv` - The cleaned, deduplicated output file.
+* `sales.pbix` - Power BI workbook with the active data model and DAX measures.
+* `sales.png` - Image file displaying the Power BI report canvas.
+* `cleaned_data_SS.png` - Screenshot proof of the data engineering steps.
+
+---
+
+## 🔧 Setup and Execution
+
+1. **Clean Raw Data:** Open and run `Sales Analysis.ipynb` to regenerate the `sales_cleaned.csv`.
+2. **Database Load:** Upload the generated `sales_cleaned.csv` file into your local SQL database engine.
+3. **Review Insights:** Open `sales.pbix` in Power BI Desktop to check the DAX metrics, underlying data model connections, and visual layouts.
